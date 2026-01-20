@@ -84,9 +84,11 @@ BiBi 症例生成：入力（contents/cases/*.md）→ テンプレ（templates/
 ---
 
 ## 5. 価格（WP/IG共通）
-- {{ price.plan }}              ← price.plan
-- {{ price.monitor_yen }}       ← price.monitor_yen（カンマ整形して表示：例 498,000）
-- {{ price.regular_yen }}       ← price.regular_yen（カンマ整形して表示）
+- {{ price.plan }}              ← price_plan_label（生成側で作る：例「部分モニター」「全顔モニター」）
+- {{ price.monitor_yen }}       ← price_monitor_yen（生成側で作る：例「498,000」）
+- {{ price.regular_yen }}       ← price_regular_yen（生成側で作る：例「553,200」）
+- {{ price_display_text }}      ← price_display_text（生成側で作る：例「部分モニター料金 ¥498,000 / 通常料金 ¥553,200」）
+- {{ price_display_short }}     ← price_display_short（生成側で作る：IG用）
 
 ---
 
@@ -176,3 +178,18 @@ BiBi 症例生成：入力（contents/cases/*.md）→ テンプレ（templates/
 - products_compare_url：/column/hyaluronic-acid-products-comparison/
 - commitment_heading_* / commitment_bold_summary：Gold症例の文言を基本踏襲
 - ba_watch_points：Gold症例の注目点を基本踏襲（必要に応じて悩みで調整）
+- 
+- 
+- ## price
+
+### Inputs (from case)
+- price.category            # "全顔" | "部分"（推奨：case入力で明示）
+- price.monitor_yen         # 数値
+- price.regular_yen         # 数値
+
+### Derived variables (for templates)
+- price_plan_label          # 表示用（例：部分モニター / 全顔モニター）
+- price_monitor_yen         # 数値（そのまま）
+- price_regular_yen         # 数値（そのまま）
+- price_display_text        # 「部分モニター料金 ¥498,000 / 通常料金 ¥553,200」など
+- price_display_short       # IG用「部分モニター ¥498,000〜」など

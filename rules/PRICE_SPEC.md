@@ -113,3 +113,33 @@ full_face_monitor	partial_monitor	regular
 	3.	製剤名が曖昧な場合
 	•	「ヒアルロン酸1本 ¥XX,XXX〜」表記にフォールバック
 	4.	価格の推測は禁止
+	
+### Step A-Price：価格を確定する（PRICE_SPEC参照）
+1) case.price.rule が "AUTO" の場合：
+   - PRICE_SPEC.md を参照し、treatment.products の製剤名から単価を特定する
+   - case.price.category が "全顔" なら full_face_monitor を使う
+   - case.price.category が "部分" なら partial_monitor を使う
+   - 通常料金は regular を使う
+2) 複数本・複数製剤がある場合：
+   - 各製剤の（該当カテゴリの）モニター単価を合算して monitor_yen を作る
+   - 各製剤の通常単価を合算して regular_yen を作る
+3) オプション（カニューレ・麻酔）が入力にある場合のみ加算する（推測禁止）
+4) 価格が確定できない場合：
+   - price.plan / monitor_yen / regular_yen は空にして、テンプレ上の価格行を出力しない（または「要確認」表記にする）
+5) 表示用整形：
+   - price_plan_label = "{category}モニター"
+   - price_monitor_yen = 3桁カンマ整形
+   - price_regular_yen = 3桁カンマ整形
+   
+
+## Product codes (for automation)
+HA_ULTRA_PLUS
+HA_VOLUMA
+HA_VOLIFT
+HA_VOLBELLA
+HA_VOLUX
+HA_VOLITE
+OPT_CANNULA
+OPT_ANESTHESIA
+BTX_BOTULAX_50
+BTX_ALLERGAN_50 

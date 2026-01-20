@@ -5,6 +5,16 @@
 ヒアルロン酸症例を生成する場合は、rules/PHILOSOPHY_HA.md を必ず参照し、判断に迷った際は本思想を優先すること。
 - 症例部位が「法令線」の場合、
   rules/philosophy/ha/nasolabial-fold.md を参照すること
+  
+### Price normalization rules
+- If case.price.monitor_yen exists:
+  - price_plan_label = "{price.category}モニター"
+  - price_display_text = "{price_plan_label}料金 ¥{monitor_yen_formatted} / 通常料金 ¥{regular_yen_formatted}"
+  - price_display_short = "{price_plan_label} ¥{monitor_yen_formatted}〜"
+- Else:
+  - price_display_text = ""  # 症例ページで価格を出さない
+  - price_display_short = "" # IGで価格を出さない
+- Never invent prices. If missing, omit.
 
 ---
 
@@ -54,10 +64,15 @@
 
 ### Step A：入力を正規化して “差し込み変数” を作る
 VARIABLE_MAPPING.md に従い、以下の派生変数を必ず作る：
+
 - keywords_joined
 - main_problems_joined
 - risks_joined / risks_short
 - products_summary / products_summary_short / products_detail
+
+- price.plan / price.monitor_yen / price.regular_yen
+- price_display_text / price_display_short
+
 - fv_conclusion
 - profile_text / profile_short
 - age_background_text
@@ -74,6 +89,13 @@ VARIABLE_MAPPING.md に従い、以下の派生変数を必ず作る：
 - 推測で事実を作らない
 - 一般論（年代背景など）として安全に補完する
 - それでも必要なら「（情報がないため一般論）」のように曖昧化してOK
+
+#### Step A-Price：価格の正規化（PRICE_SPEC + PRICE_PRODUCT_MAP 参照）
+- case.price.rule == "AUTO" の場合：
+  - treatment.products の name を PRICE_PRODUCT_MAP で code に変換
+  - PRICE_SPEC の該当単価を参照して合計を算出
+  - price.plan / price.monitor_yen / price.regular_yen を作る（カンマ整形）
+- AUTOで確定できない場合は推測せず、価格表示はしない（空にする or “要確認”） 
 
 ### Step B：テンプレ3つに差し込んで “完成形” を出す
 - templates/case_page_wp.html を差し込み済みHTMLとして出力
