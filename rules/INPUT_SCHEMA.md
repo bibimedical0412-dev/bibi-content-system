@@ -59,3 +59,19 @@ publish_targets:
   - wordpress
   - note
   - ameblo 
+  - 
+
+- 主対象は title / category_url / wp_path から判定する
+- botox/ が含まれる場合、treatment_type = BOTX
+- BOTX症例ページでは、ヒアルロン酸・アートメイク等の他施術ログは無視する
+- 併用症例として扱う場合のみ、入力に「併用：◯◯＋◯◯」の明示がある場合に限る
+- 明示がない限り、主対象以外の施術は生成・言及しない 
+- 
+## ARTMAKE fields（追加）
+- target.area: brow|lip|eyeline|other
+- target.technique: 例）4D（毛並み+パウダー）/ パウダー / 毛並み など
+- target.pigment_note: 例）ブラウン系、医療用色素 等（不明なら空欄）
+- target.sessions: 例）1回目/2回予定、1回のみ、2回目 など
+- time_required: 例）約120分
+- monitor_type: 全顔|部分|不明（部分が基本になりやすいが、入力優先）
+- risks: 入力がある場合はそれをそのまま優先 

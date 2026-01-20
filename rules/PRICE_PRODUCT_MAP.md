@@ -38,3 +38,8 @@
 - aliases: ["麻酔"]
   code: "OPT_ANESTHESIA"
   
+# ARTMAKE
+- "眉アートメイク 4D" -> ARTMAKE_BROW_4D
+- "眉 アートメイク4D" -> ARTMAKE_BROW_4D
+- "brow 4D" -> ARTMAKE_BROW_4D 
+  

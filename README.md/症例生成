@@ -27,3 +27,9 @@
 2. contexts/
 3. templates/
 4. 入力されたカルテ情報
+
+- 症例生成の司令塔プロンプト：/specs/prompts/case_generator_prompt_v1.md
+- 症例ページ仕様：/specs/CASE_PAGE_SPEC.md
+- 入力仕様：/specs/INPUT_SCHEMA.md
+- 価格仕様：/specs/PRICE_SPEC.md
+- 表示テンプレ：/templates/
