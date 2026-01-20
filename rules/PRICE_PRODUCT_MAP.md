@@ -38,8 +38,29 @@
 - aliases: ["麻酔"]
   code: "OPT_ANESTHESIA"
   
-# ARTMAKE
+## ARTMAKE mapping（確定）
+
+# eyebrow
+- "アイブロウ 4D" -> ARTMAKE_BROW_4D
+- "アイブロウ4D" -> ARTMAKE_BROW_4D
 - "眉アートメイク 4D" -> ARTMAKE_BROW_4D
-- "眉 アートメイク4D" -> ARTMAKE_BROW_4D
-- "brow 4D" -> ARTMAKE_BROW_4D 
-  
+- "眉アートメイク4D" -> ARTMAKE_BROW_4D
+- "4D（毛並み+パウダー）" -> ARTMAKE_BROW_4D
+- "4D" -> ARTMAKE_BROW_4D  # ※area=brow のときのみ有効にする（prompt側制約）
+
+- "アイブロウ 3D" -> ARTMAKE_BROW_3D
+- "アイブロウ3D" -> ARTMAKE_BROW_3D
+- "眉アートメイク 3D" -> ARTMAKE_BROW_3D
+- "眉アートメイク3D" -> ARTMAKE_BROW_3D
+- "3D" -> ARTMAKE_BROW_3D  # ※area=brow のときのみ
+
+- "アイブロウ 2D" -> ARTMAKE_BROW_2D
+- "アイブロウ2D" -> ARTMAKE_BROW_2D
+- "眉アートメイク 2D" -> ARTMAKE_BROW_2D
+- "眉アートメイク2D" -> ARTMAKE_BROW_2D
+- "2D" -> ARTMAKE_BROW_2D  # ※area=brow のときのみ
+
+# lip
+- "リップ" -> ARTMAKE_LIP
+- "リップアートメイク" -> ARTMAKE_LIP
+- "lip" -> ARTMAKE_LIP

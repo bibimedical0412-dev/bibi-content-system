@@ -83,19 +83,65 @@ Fat X Core	20cc	¥60,000	¥75,000
 
 5. 看護師施術（アートメイク）
 
-アイブロウ
+### ARTMAKE_BROW_4D
+- display_name: "アイブロウ 4D"
+- unit_label: "1回"
+- pricing:
+  - monitor_type: "全顔"
+    monitor_price: 33000
+    regular_price: 41000
+  - monitor_type: "部分"
+    monitor_price: 38000
+    regular_price: 41000
+- notes:
+  - "2回目は1〜2ヶ月後を推奨（個人差あり）"
+  - "モニター条件：Before/After写真の撮影・使用許可、HP・Instagram・広告での使用許可"
+  - "顔出しNG、部分のみOKなど条件により料金変動あり"
 
-type	full_face_monitor	partial_monitor	regular
-4D	¥33,000	¥38,000	¥41,000
-3D	¥28,000	¥32,000	¥35,000
-2D	¥28,000	¥32,000	¥35,000
+### ARTMAKE_BROW_3D
+- display_name: "アイブロウ 3D"
+- unit_label: "1回"
+- pricing:
+  - monitor_type: "全顔"
+    monitor_price: 28000
+    regular_price: 35000
+  - monitor_type: "部分"
+    monitor_price: 32000
+    regular_price: 35000
+- notes:
+  - "2回目は1〜2ヶ月後を推奨（個人差あり）"
+  - "モニター条件：Before/After写真の撮影・使用許可、HP・Instagram・広告での使用許可"
+  - "顔出しNG、部分のみOKなど条件により料金変動あり"
 
-リップ
+### ARTMAKE_BROW_2D
+- display_name: "アイブロウ 2D"
+- unit_label: "1回"
+- pricing:
+  - monitor_type: "全顔"
+    monitor_price: 28000
+    regular_price: 35000
+  - monitor_type: "部分"
+    monitor_price: 32000
+    regular_price: 35000
+- notes:
+  - "2回目は1〜2ヶ月後を推奨（個人差あり）"
+  - "モニター条件：Before/After写真の撮影・使用許可、HP・Instagram・広告での使用許可"
+  - "顔出しNG、部分のみOKなど条件により料金変動あり"
 
-full_face_monitor	partial_monitor	regular
-¥28,000	¥32,000	¥35,000
-
-
+### ARTMAKE_LIP
+- display_name: "リップ"
+- unit_label: "1回"
+- pricing:
+  - monitor_type: "全顔"
+    monitor_price: 28000
+    regular_price: 35000
+  - monitor_type: "部分"
+    monitor_price: 32000
+    regular_price: 35000
+- notes:
+  - "2回目は1〜2ヶ月後を推奨（個人差あり）"
+  - "モニター条件：Before/After写真の撮影・使用許可、HP・Instagram・広告での使用許可"
+  - "顔出しNG、部分のみOKなど条件により料金変動あり"
 ⸻
 
 6. モニター免責文（固定・削除禁止）
