@@ -1,0 +1,91 @@
+# case_input_extractor_v1.md
+BiBiクリニック 症例入力 抽出プロンプト v1（BOTX/HA共通）
+
+## 目的
+スプレッドシートやカルテ原文をそのまま貼った「生テキスト」から、
+症例生成に必要な最小情報だけを安全に抽出し、A)症例入力（YAML）を出力する。
+
+## 最重要方針（事故防止）
+- 推測で埋めない。不明は空欄にし flags に出す
+- 価格は抽出しない（金額があっても無視）
+- cc表記は「抽出はしてもよい」が、A出力では `raw_cc_notes` に隔離し、本文用には使わない
+- 主対象以外の施術ログは原則除外（併用は明示がある場合のみ）
+- カルテ番号・画像番号・日付などの矛盾は必ず flags に出す
+
+## 入力
+ユーザーが貼った「生テキスト」全体を raw_text とする。
+
+## Step 0 主対象判定
+- raw_text に以下が含まれる場合、treatment_type を決める
+  - "/service/botox/" または "botox/" → BOTX
+  - "/service/hyaluronic-acid/" または "hyaluronic" → HA
+  - "/service/artmake/" または "artmake" → ARTMAKE
+- どれも判定不能なら flags に入れる
+
+## Step 1 メタ抽出（上部行から優先）
+抽出項目：
+- title（1行目がそれっぽい場合は採用）
+- concern（悩み1行）
+- primary_kw（KWっぽい1行）
+- lead（導入文）
+- category_url（/service/.../）
+- case_slug
+- wp_path
+- image_url（リンク：のURL）
+- image_alt（✅Alt：以降）
+
+## Step 2 カルテログ抽出（複数セッション対応）
+- 日付ブロックごとに sessions[] を作る
+- 各 session から抽出：
+  - date
+  - treatment_block_name（例：ボツリヌストキシン治療/ヒアルロン酸治療）
+  - doctor（院長 山本 等）
+  - product_name（例：ボツラックス/ボリフト 等）
+  - area（例：肩/唇 等）
+  - units_or_syringes（BOTXなら単位、HAなら本数）
+  - raw_cc_notes（HAで cc がある場合はここにだけ入れる）
+  - patient_voice / doctor_obs（フォローアップがある場合）
+
+## Step 3 主対象のセッション確定
+- treatment_type に一致する session のみを `target_sessions` とする
+- target_sessions が複数ある場合：
+  - raw_text 内に「(3回目)」「最新」等の明示があればそれを優先
+  - それ以外は最新日付を採用し、残りは `history_sessions` に回す
+- 主対象以外の session は `excluded_sessions` として残し、A本体には混ぜない（flagsには記録）
+
+## 出力形式（厳守）
+1) 【EXTRACTED_A_YAML】 A)症例入力（YAML）
+2) 【FLAGS】 矛盾・不足・要確認（箇条書き）
+
+### A)症例入力（YAML）スキーマ
+```yaml
+case_meta:
+  title: ""
+  primary_kw: ""
+  secondary_kws: []
+  lead: ""
+  category_url: ""
+  case_slug: ""
+  wp_path: ""
+patient:
+  age_band: ""
+  gender: ""
+  main_concern: ""
+  concern_one_liner: ""
+images:
+  - url: ""
+    alt: ""
+target:
+  treatment_type: "BOTX|HA|ARTMAKE|UNKNOWN"
+  area: ""
+  product_name: ""
+  units_or_syringes: ""   # BOTX=単位, HA=本数
+  plan_name: ""
+  publish_session: ""
+history_sessions: []
+excluded_sessions: []
+followup:
+  patient_voice: ""
+  doctor_obs: ""
+raw_notes:
+  raw_cc_notes: ""
