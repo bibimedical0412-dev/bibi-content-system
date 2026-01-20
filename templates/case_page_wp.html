@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body { max-width:100%; overflow-x:hidden; font-size:16px; line-height:1.7; padding:0 15px; }
+  img { max-width:100%; height:auto; display:block; }
+  .grid-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; }
+  .grid-2col { display:grid; grid-template-columns:1fr 2fr; gap:30px; }
+  @media (max-width:768px){
+    body{ font-size:15px; }
+    .grid-2col{ grid-template-columns:1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- S1 冒頭画像（2枚） -->
+<div style="margin:0 0 40px 0;">
+  <div class="grid-container" style="max-width:1200px;margin:0 auto;">
+    <div><img src="{{images.hero.0.url}}" alt="{{images.hero.0.alt}}" style="border-radius:8px;"></div>
+    <div><img src="{{images.hero.1.url}}" alt="{{images.hero.1.alt}}" style="border-radius:8px;"></div>
+  </div>
+
+  <!-- S2 結論ファースト -->
+  <div style="text-align:center;margin-top:20px;padding:20px;background:#F0F4FF;border-radius:8px;border-left:4px solid #726989;">
+    <p style="font-size:18px;font-weight:600;color:#726989;margin:0;line-height:1.6;">
+      ▶ {{fv_conclusion}}
+    </p>
+  </div>
+</div>
+
+<!-- S3 施術概要ボックス -->
+<div style="background:#F5F5F5;padding:20px;border-radius:8px;margin:20px 0;border-left:4px solid #726989;">
+  <p style="margin:8px 0;"><strong>【施術内容】</strong>{{treatment.name}}</p>
+  <p style="margin:8px 0;"><strong>【リスク・副作用】</strong>{{risks_joined}}</p>
+  <p style="margin:8px 0;"><strong>【使用製剤】</strong>{{products_summary}}</p>
+  <p style="margin:8px 0;"><strong>【価格】</strong>{{price.plan}}料金 ¥{{price.monitor_yen}} / 通常料金 ¥{{price.regular_yen}}</p>
+  <p style="margin:8px 0;"><strong>【回数】</strong>{{treatment.sessions}}回</p>
+  <p style="margin:8px 0;"><strong>【施術時間】</strong>{{treatment.time_minutes}}</p>
+  <p style="margin:12px 0 0;font-size:12px;color:#666;">
+    ＊本ページ記載のモニター制度・料金は投稿時点の内容です。今後、内容が変更・終了となる場合があります。
+  </p>
+</div>
+
+<!-- S4 患者様プロフィールとお悩み -->
+<div style="margin:60px 0;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    患者様プロフィールとお悩み
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div class="grid-2col" style="max-width:1200px;margin:0 auto;align-items:start;">
+    <div>
+      <img src="{{images.profile.url}}" alt="{{images.profile.alt}}" style="border-radius:8px;">
+    </div>
+    <div>
+      <h3 style="font-size:20px;font-weight:600;margin-bottom:16px;">プロフィール</h3>
+      <p style="font-size:16px;line-height:1.875;color:#333;margin-bottom:24px;">
+        {{profile_text}}
+      </p>
+
+      <h3 style="font-size:20px;font-weight:600;margin-bottom:16px;">主なお悩み</h3>
+      <p style="font-size:16px;line-height:1.875;color:#333;">
+        「{{main_problems_joined}}」
+      </p>
+
+      <p style="font-size:16px;line-height:1.875;color:#666;margin-top:16px;">
+        {{age_background_text}}
+      </p>
+
+      <p style="font-size:16px;line-height:1.875;color:#666;margin-top:16px;">
+        当院では、{{age_decade}}のたるみ改善にヒアルロン酸を用いた構造的リフトアプローチを採用し、顔の深層構造から若返りを目指します。
+        <a href="{{category_url}}" style="color:#726989;text-decoration:underline;">総合ページ（施術解説）はこちら</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- S5 施術内容・使用製剤（テーブル） -->
+<div style="margin:60px 0;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    施術内容・使用製剤
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div style="overflow-x:auto;">
+    <table style="width:100%;max-width:800px;margin:0 auto;border-collapse:collapse;background:#F5F3F7;border-radius:8px;overflow:hidden;min-width:280px;">
+      <tr style="background:#726989;color:#fff;">
+        <th style="padding:16px;text-align:left;font-weight:600;">項目</th>
+        <th style="padding:16px;text-align:left;font-weight:600;">内容</th>
+      </tr>
+      <tr>
+        <th style="padding:16px;background:#E8E4EC;font-weight:600;">使用製剤</th>
+        <td style="padding:16px;">{{products_detail}}</td>
+      </tr>
+      <tr>
+        <th style="padding:16px;background:#E8E4EC;font-weight:600;">注入部位</th>
+        <td style="padding:16px;">
+          <strong>セッション1:</strong> {{treatment.injection_areas_session1}}<br>
+          <strong>セッション2:</strong> {{treatment.injection_areas_session2}}
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin-top:40px;max-width:960px;margin-left:auto;margin-right:auto;">
+    <h3 style="font-size:24px;font-weight:600;margin-bottom:16px;">製剤選定理由</h3>
+    <p style="font-size:16px;line-height:1.875;color:#333;">
+      {{product_rationale_text}}
+      <a href="{{products_compare_url}}" style="color:#726989;text-decoration:underline;">製剤比較はこちら</a>
+    </p>
+  </div>
+</div>
+
+<!-- S6 Dr.のこだわりポイント -->
+<div style="margin:80px 0;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    Dr.のこだわりポイント
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div class="grid-2col" style="grid-template-columns:2fr 1fr;gap:40px;max-width:1200px;margin:0 auto;align-items:start;">
+    <div>
+      <h3 style="font-size:24px;font-weight:600;margin-bottom:16px;color:#726989;">{{commitment_heading_1}}</h3>
+      <p style="font-size:16px;line-height:1.875;color:#333;margin-bottom:32px;">{{commitment_text_1}}</p>
+
+      <div style="background:#F0F4FF;padding:20px;border-radius:8px;border-left:4px solid #726989;margin:30px 0;">
+        <p style="font-size:18px;font-weight:600;color:#726989;margin:0;line-height:1.6;">
+          ▶ {{commitment_bold_summary}}
+        </p>
+      </div>
+
+      <h3 style="font-size:24px;font-weight:600;margin-bottom:16px;color:#726989;">{{commitment_heading_2}}</h3>
+      <p style="font-size:16px;line-height:1.875;color:#333;margin-bottom:32px;">{{commitment_text_2}}</p>
+
+      <h3 style="font-size:24px;font-weight:600;margin-bottom:16px;color:#726989;">{{commitment_heading_3}}</h3>
+      <p style="font-size:16px;line-height:1.875;color:#333;">{{commitment_text_3}}</p>
+    </div>
+
+    <div style="text-align:right;">
+      <img src="{{images.procedure.url}}" alt="{{images.procedure.alt}}" style="width:100%;max-width:280px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</div>
+
+<!-- S7 Before/After -->
+<div style="margin:80px 0;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    Before / After
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div style="text-align:center;margin-bottom:30px;padding:15px;background:#FFF9F0;border-radius:8px;border-left:4px solid #FFA726;">
+    <p style="font-size:16px;font-weight:600;color:#FFA726;margin:0;line-height:1.6;">
+      ※{{ba_watch_points}}
+    </p>
+  </div>
+
+  <div class="grid-container" style="max-width:1200px;margin:0 auto;">
+    <div><img src="{{images.before_after.0.url}}" alt="{{images.before_after.0.alt}}" style="border-radius:8px;"></div>
+    <div><img src="{{images.before_after.1.url}}" alt="{{images.before_after.1.alt}}" style="border-radius:8px;"></div>
+    <div><img src="{{images.before_after.2.url}}" alt="{{images.before_after.2.alt}}" style="border-radius:8px;"></div>
+  </div>
+
+  <p style="margin-top:12px;font-size:14px;color:#666;text-align:center;">
+    【リスク・副作用】{{risks_joined}}<br>
+    【使用製剤】{{products_summary}}<br>
+    【価格】{{price.plan}}料金 ¥{{price.monitor_yen}} / 通常料金 ¥{{price.regular_yen}}<br>
+    【回数】{{treatment.sessions}}回<br>
+    ※効果には個人差があります。<br>
+    ＊本ページ記載のモニター制度・料金は投稿時点の内容です。今後、内容が変更・終了となる場合があります。
+  </p>
+</div>
+
+<!-- S8 施術後の変化（院長コメント） -->
+<div style="margin:80px 0;background:#F5F3F7;padding:60px 20px;border-radius:12px;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    施術後の変化（院長コメント）
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div class="grid-2col" style="gap:40px;max-width:1200px;margin:0 auto;align-items:center;">
+    <div style="text-align:center;">
+      <img src="{{images.doctor.url}}" alt="{{images.doctor.alt}}" style="width:100%;max-width:300px;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+      <p style="font-size:16px;font-weight:600;margin-top:16px;color:#726989;">院長 山本 幸一郎</p>
+    </div>
+
+    <div style="background:#fff;padding:32px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+      <p style="font-size:16px;line-height:1.875;color:#333;margin-bottom:20px;">
+        {{doctor_comment_paragraph_1}}
+      </p>
+      <p style="font-size:16px;line-height:1.875;color:#333;">
+        {{doctor_comment_paragraph_2}}
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- S9 患者様の感想 + S10 向いている人 -->
+<div style="margin:80px 0;">
+  <h2 style="font-size:28px;font-weight:600;text-align:center;margin-bottom:40px;position:relative;padding-bottom:16px;">
+    患者様の感想
+    <span style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#726989;"></span>
+  </h2>
+
+  <div style="max-width:800px;margin:0 auto;background:#FFF9F0;padding:40px;border-radius:12px;border-left:4px solid #FFA726;">
+    <blockquote style="margin:0;padding:0;">
+      <p style="font-size:18px;line-height:1.875;color:#333;font-style:italic;margin-bottom:20px;">
+        "{{patient_voice}}"
+      </p>
+    </blockquote>
+    <p style="font-size:16px;line-height:1.875;color:#666;">
+      {{voice_generalization_text}}
+    </p>
+  </div>
+
+  <div style="max-width:800px;margin:40px auto 0;background:#F0F4FF;padding:30px;border-radius:12px;border-left:4px solid #726989;">
+    <h3 style="font-size:22px;font-weight:600;margin-top:0;margin-bottom:20px;color:#726989;">✔ この症例が向いている人</h3>
+    <ul style="list-style:none;padding-left:0;margin:0;">
+      <li style="padding:10px 0;border-bottom:1px solid #E0E0E0;font-size:16px;line-height:1.6;">✔ {{fit_1}}</li>
+      <li style="padding:10px 0;border-bottom:1px solid #E0E0E0;font-size:16px;line-height:1.6;">✔ {{fit_2}}</li>
+      <li style="padding:10px 0;font-size:16px;line-height:1.6;">✔ {{fit_3}}</li>
+    </ul>
+  </div>
+</div>
+
+<!-- S11 関連ページ導線 -->
+<div style="background:#F0F4FF;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#726989;margin-top:0;">💉 総合ページ（施術解説）</h3>
+  <p>
+    <a href="{{category_url}}" style="color:#726989;font-weight:bold;text-decoration:underline;">
+      {{related_links.0.label}}
+    </a>
+  </p>
+  <p style="font-size:14px;color:#666;margin-bottom:0;">
+    施術の流れ、料金、リスク、よくある質問など、詳しく解説しています。
+  </p>
+</div>
+
+<div style="background:#FFF9F0;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#FFA726;margin-top:0;">💉 こちらの施術もおすすめ</h3>
+  <ul style="list-style:none;padding-left:0;">
+    <li style="margin:10px 0;">
+      <a href="{{related_links.1.url}}" style="color:#726989;font-weight:bold;">{{related_links.1.label}}</a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">{{related_links_note_1}}</span>
+    </li>
+    <li style="margin:10px 0;">
+      <a href="{{related_links.2.url}}" style="color:#726989;font-weight:bold;">{{related_links.2.label}}</a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">{{related_links_note_2}}</span>
+    </li>
+  </ul>
+</div>
+
+<footer style="background:#726989;color:#fff;padding:40px 20px;text-align:center;margin-top:80px;">
+  <p style="margin:0;font-size:14px;">© 2026 BiBi Clinic. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
