@@ -6,6 +6,26 @@
 - 症例部位が「法令線」の場合、
   rules/philosophy/ha/nasolabial-fold.md を参照すること
   
+
+### Fixed assets（WPで共通使用する固定画像）
+
+- WPの「施術手元アップ」と「院長プロフィール写真」は固定アセットを使用する。
+- contents/cases/{case_id}.md に images.procedure / images.doctor が無い場合は、以下にフォールバックする（推測で新規URLは作らない）。
+
+default_assets:
+  procedure:
+    url: "https://bibi-clinic.jp/wp-content/uploads/2025/11/bibi-osaka-doctor-hyaluronic-injection-procedure-01.jpg-scaled.png"
+    alt: "ヒアルロン酸注入の手元アップ｜大阪 心斎橋BiBiクリニック"
+  doctor:
+    url: "https://bibi-clinic.jp/wp-content/uploads/2025/11/DSC01442-scaled.png"
+    alt: "院長 山本幸一郎のプロフィール写真｜大阪 心斎橋BiBiクリニック"
+
+### Image slot rules（WPの画像配置固定・追記）
+
+- images.procedure が未指定なら default_assets.procedure を必ず採用する
+- images.doctor が未指定なら default_assets.doctor を必ず採用する
+- それでも画像が無い場合は空欄にし、推測で埋めない
+  
 ### Price normalization rules
 - If case.price.monitor_yen exists:
   - price_plan_label = "{price.category}モニター"
@@ -15,7 +35,12 @@
   - price_display_text = ""  # 症例ページで価格を出さない
   - price_display_short = "" # IGで価格を出さない
 - Never invent prices. If missing, omit.
-
+- 
+### Treatment session rules
+- 原則、症例はセッション1のみで作成する（セッション2は基本なし）。
+- injection_areas_session2 が空または未指定の場合：
+  - WPでは「セッション2」の行を出力しない（テンプレ側で非表示 or 空行抑制）
+  - IGではセッション2に触れない
 ---
 
 ## 入力
