@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* 基本設定 */
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 15px;
+  }
+  
+  /* 画像 */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* グリッド(自動レスポンシブ) */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* ボックス */
+  .info-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  /* メディアクエリ */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+    .info-box { padding: 15px; }
+    
+    /* 2カラムを1カラムに */
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 🆕 冒頭画像(2枚) -->
+<div style="margin: 0 0 40px 0;">
+  <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_1.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔正面B/A〕｜大阪 心斎橋BiBiクリニック" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_2.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔左斜めB/A〕｜大阪 心斎橋BiBiクリニック" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+  </div>
+  
+  <!-- 🆕 ① ファーストビュー:結論文 -->
+  <div style="text-align: center; margin-top: 20px; padding: 20px; background: #F0F4FF; border-radius: 8px; border-left: 4px solid #726989;">
+    <p style="font-size: 18px; font-weight: 600; color: #726989; margin: 0; line-height: 1.6;">
+      ▶ 50代のたるみを改善し、構造的リフトで若々しい印象を回復
+    </p>
+  </div>
+</div>
+
+<!-- ② 施術概要ボックス -->
+<div style="background:#F5F5F5;padding:20px;border-radius:8px;margin:20px 0;border-left:4px solid #726989;">
+  <p style="margin:8px 0;"><strong>【施術内容】</strong>ヒアルロン酸注入術</p>
+  <p style="margin:8px 0;"><strong>【リスク・副作用】</strong>内出血、腫れ、痛み、左右差、感染、アレルギー反応、塞栓など</p>
+  <p style="margin:8px 0;"><strong>【使用製剤】</strong>ボリューマ 4本、ボラックス 3本、ボルベラ 2本、ボツラックス 50単位</p>
+  <p style="margin:8px 0;"><strong>【価格】</strong>部分モニター料金 ¥498,000 / 通常料金 ¥553,200</p>
+  <p style="margin:8px 0;"><strong>【回数】</strong>2回(セッション1・2)</p>
+  <p style="margin:8px 0;"><strong>【施術時間】</strong>約10〜30分</p>
+</div>
+
+<!-- ③ 患者様プロフィールとお悩み -->
+<div id="section-profile" class="patient-profile-concern" style="margin: 60px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    患者様プロフィールとお悩み
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; max-width: 1200px; margin: 0 auto; align-items: start;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_3.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔正面1回目B/A〕｜大阪 心斎橋BiBiクリニック" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    
+    <div>
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">プロフィール</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 24px;">
+        59歳女性。
+      </p>
+      
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">主なお悩み</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        「目の下のクマ、ほうれい線、フェイスラインのたるみ、顎/顎先の形」
+      </p>
+      
+      <p style="font-size: 16px; line-height: 1.875; color: #666; margin-top: 16px;">
+        50代になると、たるみによって老けて見えることが最大のお悩みとなります。単なるシワだけでなく、顔全体のボリュームロスが原因で、目の下のクマ、ほうれい線、フェイスラインの崩れといった複合的な問題が生じます。
+      </p>
+      
+      <p style="font-size: 16px; line-height: 1.875; color: #666; margin-top: 16px;">
+        当院では、50代のたるみ改善にヒアルロン酸を用いた構造的リフトアプローチを採用し、顔の深層構造から若返りを目指します。
+        <a href="/service/hyaluronic-acid/lift/" style="color: #726989; text-decoration: underline;">ヒアルロン酸リフトについて詳しくはこちら</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ④ 施術内容・使用製剤 -->
+<div id="section-treatment" class="treatment-detail" style="margin: 60px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    施術内容・使用製剤
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <!-- スマホ最適化テーブル -->
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background: #F5F3F7; border-radius: 8px; overflow: hidden; min-width: 280px;">
+      <tr style="background: #726989; color: #fff;">
+        <th style="padding: 16px; text-align: left; font-weight: 600;">項目</th>
+        <th style="padding: 16px; text-align: left; font-weight: 600;">内容</th>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">使用製剤</th>
+        <td style="padding: 16px;"><strong>セッション1:</strong> ボリューマ 4本、ボラックス 1本、ボルベラ 1本、ボツラックス 50単位<br><strong>セッション2:</strong> ボラックス 2本、ボルベラ 1本</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">注入部位</th>
+        <td style="padding: 16px;"><strong>セッション1(中顔面):</strong> 頬外側(CK1,4)、頬骨下(Jw1)、こめかみ(T1)、頬中心(CK3)、涙袋・目の下(ティアトラフ)、ボトックス(額・眉間・目尻・顎・口角)<br><strong>セッション2(下顔面):</strong> 顎先(C1,2)、唇</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="margin-top: 40px; max-width: 960px; margin-left: auto; margin-right: auto;">
+    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">製剤選定理由</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333;">
+      50代のたるみ改善では、部位ごとに最適な製剤を選定することが重要です。<strong>ボリューマ</strong>は中顔面のリフト力に優れ、頬骨周辺やこめかみに使用することで、顔全体を持ち上げる構造的なサポートを実現します。<strong>ボラックス</strong>は顎形成に最適で、フェイスラインを引き締めるとともに、横顔のEラインを美しく整えます。<strong>ボルベラ</strong>は目の下や唇といった繊細な部位に使用し、自然で柔らかい仕上がりを提供します。これらの製剤を組み合わせることで、顔全体のバランスを保ちながら若々しい印象を回復します。
+      <a href="/column/hyaluronic-acid-products-comparison/" style="color: #726989; text-decoration: underline;">アラガン社ヒアルロン酸全シリーズ徹底比較はこちら</a>
+    </p>
+  </div>
+</div>
+
+<!-- ⑤ Dr.のこだわりポイント(独自技術) -->
+<div id="section-commitment" class="doctor-commitment" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    Dr.のこだわりポイント
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: start;">
+    <div>
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">50代のたるみ改善は「線」ではなく「面」で設計する</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 32px;">
+        50代のたるみ改善では、ほうれい線やマリオネットラインといった「線」だけを見るのではなく、顔全体の「面」のボリューム分布を正確に評価することが重要です。骨の萎縮、脂肪層の下垂、靭帯の緩みといった深層構造の変化を捉え、骨膜上層へのヒアルロン酸注入によって土台を強化します。中顔面の外側(頬骨・こめかみ)と中心(頬中心・目の下)の両方にアプローチすることで、顔全体の立体感を回復し、「老け見え」の根本原因を改善します。
+      </p>
+      
+      <!-- 🆕 太字のまとめ文を挿入 -->
+      <div style="background: #F0F4FF; padding: 20px; border-radius: 8px; border-left: 4px solid #726989; margin: 30px 0;">
+        <p style="font-size: 18px; font-weight: 600; color: #726989; margin: 0; line-height: 1.6;">
+          ▶ BiBiクリニックでは「支える構造」から設計し、表面だけの治療は行いません
+        </p>
+      </div>
+      
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">美的基準</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 32px;">
+        若々しさとは、単に「シワがない」ことではなく、光が当たる部位が高く、適度な陰影があり、顔全体が立体的に見えることです。当院では「光と影の理論」に基づき、頬骨やこめかみといったハイライト部位を高くすることで、自然で美しい若返りを実現します。年齢に応じた自然なボリューム配分を重視し、「やりすぎ感」のない仕上がりを目指します。
+      </p>
+      
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">安全性へのこだわり</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        ヒアルロン酸注入における最大のリスクは血管塞栓です。当院では3D解剖学に基づく精密な注入計画、吸引確認(アスピレーション)の徹底、カニューレの積極的使用により、リスクを最小限に抑えます。万が一の際にはヒアルロニダーゼを常備し、迅速な対応体制を整えています。厚生労働省承認製剤のみを使用し、患者様の安全を最優先にした治療を提供します。
+      </p>
+    </div>
+    
+    <div style="text-align: right;">
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/11/bibi-osaka-doctor-hyaluronic-injection-procedure-01.jpg-scaled.png" alt="ヒアルロン酸注入の手元アップ" style="width: 100%; max-width: 280px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</div>
+
+<!-- ⑥ Before/After画像(レスポンシブグリッド) -->
+<div id="section-beforeafter" class="before-after" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    Before / After
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <!-- 🆕 見るポイントの誘導文 -->
+  <div style="text-align: center; margin-bottom: 30px; padding: 15px; background: #FFF9F0; border-radius: 8px; border-left: 4px solid #FFA726;">
+    <p style="font-size: 16px; font-weight: 600; color: #FFA726; margin: 0; line-height: 1.6;">
+      ※ほうれい線の深さ・頬の高さ・フェイスラインの引き締まり・顔全体のボリューム感にご注目ください
+    </p>
+  </div>
+  
+  <div class="grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_1.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔正面B/A〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_4.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔右斜めB/A〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_5.png" alt="50代女性 ヒアルロン酸リフト 症例写真〔左斜めB/A〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+  </div>
+  
+  <p style="margin-top: 12px; font-size: 14px; color: #666; text-align: center;">
+    【リスク・副作用】内出血、腫れ、痛み、左右差、感染、アレルギー反応、塞栓など<br>
+    【使用製剤】ボリューマ 4本、ボラックス 3本、ボルベラ 2本、ボツラックス 50単位<br>
+    【価格】部分モニター料金 ¥498,000 / 通常料金 ¥553,200<br>
+    【回数】2回(セッション1・2)<br>
+    ※効果には個人差があります。
+  </p>
+</div>
+
+<!-- ⑦ 施術後の変化(院長コメント) -->
+<div id="section-doctor-comment" class="doctor-comment-after" style="margin: 80px 0; background: #F5F3F7; padding: 60px 20px; border-radius: 12px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    施術後の変化(院長コメント)
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center;">
+    <div style="text-align: center;">
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/11/DSC01442-scaled.png" alt="院長 山本のプロフィール写真" style="width: 100%; max-width: 300px; height: auto; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <p style="font-size: 16px; font-weight: 600; margin-top: 16px; color: #726989;">院長 山本 幸一郎</p>
+    </div>
+    
+    <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 20px;">
+        Before/Afterの写真をご覧いただくと、50代特有のたるみによる「老け見え」が大きく改善されていることがわかります。頬骨周辺やこめかみへのボリューマ注入により、中顔面全体がリフトアップされ、ほうれい線が目立たなくなりました。また、顎へのボラックス注入でフェイスラインが引き締まり、横顔のEラインも美しく整いました。患者様からは「全然違いますね。顔が引き締まっていて嬉しいです。ありがとうございました。」との感想をいただきました。
+      </p>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        当院の美的基準である「光と影の理論」に基づき、光が当たる部位(頬骨・こめかみ)を高くすることで、自然で立体的な若返りを実現しました。2回のセッションに分けて丁寧に仕上げることで、年齢に応じた自然なボリューム配分を維持し、「やりすぎ感」のない美しい仕上がりとなりました。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ⑧ 患者様の感想 -->
+<div id="section-voice" class="patient-voice" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    患者様の感想
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 800px; margin: 0 auto; background: #FFF9F0; padding: 40px; border-radius: 12px; border-left: 4px solid #FFA726;">
+    <blockquote style="margin: 0; padding: 0;">
+      <p style="font-size: 18px; line-height: 1.875; color: #333; font-style: italic; margin-bottom: 20px;">
+        "全然違いますね。顔が引き締まっていて嬉しいです。ありがとうございました。
+        <span style="color:#726989;">たるみが改善されて、鏡を見るのが楽しみになりました。</span>"
+      </p>
+    </blockquote>
+    <p style="font-size: 16px; line-height: 1.875; color: #666;">
+      50代のたるみ改善では、顔全体の構造的なバランスを整えることが重要です。当院では、深層構造から若返りを目指し、自然で持続的な効果を提供します。患者様一人ひとりの顔の構造を丁寧に分析し、最適な治療計画を提案いたします。
+    </p>
+  </div>
+  
+  <!-- 🆕 この症例が向いている人 -->
+  <div style="max-width: 800px; margin: 40px auto 0; background: #F0F4FF; padding: 30px; border-radius: 12px; border-left: 4px solid #726989;">
+    <h3 style="font-size: 22px; font-weight: 600; margin-top: 0; margin-bottom: 20px; color: #726989;">✔ この症例が向いている人</h3>
+    <ul style="list-style: none; padding-left: 0; margin: 0;">
+      <li style="padding: 10px 0; border-bottom: 1px solid #E0E0E0; font-size: 16px; line-height: 1.6;">
+        ✔ 50代でたるみによる老け見えが気になる方
+      </li>
+      <li style="padding: 10px 0; border-bottom: 1px solid #E0E0E0; font-size: 16px; line-height: 1.6;">
+        ✔ ほうれい線・フェイスラインのたるみ・目の下のクマなど複合的な悩みがある方
+      </li>
+      <li style="padding: 10px 0; font-size: 16px; line-height: 1.6;">
+        ✔ ヒアルロン酸リフトで自然に若返りたい方
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ⑨ 関連ページ - カテゴリー導線 -->
+<div style="background:#F0F4FF;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#726989;margin-top:0;">💉 ヒアルロン酸リフトについて詳しく</h3>
+  <p>
+    <a href="/service/hyaluronic-acid/lift/" style="color:#726989;font-weight:bold;text-decoration:underline;">
+      ヒアルロン酸リフトの詳細はこちら
+    </a>
+  </p>
+  <p style="font-size:14px;color:#666;margin-bottom:0;">
+    施術の流れ、料金、リスク、よくある質問など、詳しく解説しています。
+  </p>
+</div>
+
+<!-- ⑨ 関連ページ - その他関連 -->
+<div style="background:#FFF9F0;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#FFA726;margin-top:0;">💉 こちらの施術もおすすめ</h3>
+  <ul style="list-style:none;padding-left:0;">
+    <li style="margin:10px 0;">
+      <a href="/service/hyaluronic-acid/lowerface-chin/" style="color:#726989;font-weight:bold;">
+        顎・フェイスラインのヒアルロン酸
+      </a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">
+        フェイスラインを引き締め、横顔の印象を改善します。
+      </span>
+    </li>
+    <li style="margin:10px 0;">
+      <a href="/service/botox/" style="color:#726989;font-weight:bold;">
+        ボトックス注射
+      </a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">
+        表情じわの改善や小顔効果に有効です。
+      </span>
+    </li>
+  </ul>
+</div>
+
+<footer style="background: #726989; color: #fff; padding: 40px 20px; text-align: center; margin-top: 80px;">
+  <p style="margin: 0; font-size: 14px;">© 2026 BiBi Clinic. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

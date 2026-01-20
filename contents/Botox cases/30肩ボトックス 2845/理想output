@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* 基本設定 */
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 0 15px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    color: #545454;
+    background: #f5f6f9;
+  }
+  
+  /* 画像 */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* グリッド（自動レスポンシブ） */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  /* ボックス */
+  .info-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  /* メディアクエリ */
+  @media (max-width: 768px) {
+    body { font-size: 15px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 18px; }
+    .info-box { padding: 15px; }
+    
+    /* 2カラムを1カラムに */
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ② 施術概要ボックス -->
+<div style="background:#F5F5F5;padding:20px;border-radius:8px;margin:20px 0;border-left:4px solid #726989;">
+  <p style="margin:8px 0;"><strong>【施術内容】</strong>肩ボトックス注入術</p>
+  <p style="margin:8px 0;"><strong>【リスク・副作用】</strong>内出血、腫れ、痛み、左右差、感染、アレルギー反応</p>
+  <p style="margin:8px 0;"><strong>【価格】</strong>ボツラックス300単位 ¥29,800(全顔モニター料金) / ¥49,800(通常料金)＊投稿時点</p>
+  <p style="margin:8px 0;"><strong>【効果発現】</strong>1〜2週間後から、2〜4週間後にピーク</p>
+  <p style="margin:8px 0;"><strong>【持続期間】</strong>3-4ヶ月</p>
+  <p style="margin:8px 0;"><strong>【回数】</strong>1回/2ヶ月後</p>
+  <p style="margin:8px 0;"><strong>【施術時間】</strong>約10~30分</p>
+</div>
+
+<!-- ③ 患者様プロフィールとお悩み -->
+<div id="section-profile" class="patient-profile-concern" style="margin: 60px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    患者様プロフィールとお悩み
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; max-width: 1200px; margin: 0 auto; align-items: start;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/カルテ番号：2760-1.png" alt="30代 肩ボトックス 症例写真〔背面Before/After〕｜大阪 心斎橋BiBiクリニック" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    
+    <div>
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">プロフィール</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 24px;">
+        30代女性。
+      </p>
+      
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px;">主なお悩み</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        「ずっと肩の盛り上がりが気になっていた」
+      </p>
+      
+      <!-- 🆕 検索意図キーワードに即した悩み詳細 -->
+      <p style="font-size: 16px; line-height: 1.875; color: #666; margin-top: 16px;">
+        肩の盛り上がりが目立ち、ボトックスによる改善を希望されていました。特に僧帽筋の張りが強く、ラインが気になる状態でした。
+      </p>
+      
+      <p style="font-size: 16px; line-height: 1.875; color: #666; margin-top: 16px;">
+        僧帽筋のボリュームを抑えることで、すっきりとした肩のラインを実現します。
+        <a href="/service/botox/shoulder/" style="color: #726989; text-decoration: underline;">肩ボトックスについて詳しくはこちら</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ④ 施術内容・使用製剤 -->
+<div id="section-treatment" class="treatment-detail" style="margin: 60px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    施術内容・使用製剤
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <!-- スマホ最適化テーブル -->
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background: #F5F3F7; border-radius: 8px; overflow: hidden; min-width: 280px;">
+      <tr style="background: #726989; color: #fff;">
+        <th style="padding: 16px; text-align: left; font-weight: 600;">項目</th>
+        <th style="padding: 16px; text-align: left; font-weight: 600;">内容</th>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">使用製剤</th>
+        <td style="padding: 16px;">ボツラックス 300単位</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">注入部位</th>
+        <td style="padding: 16px;">僧帽筋（肩）</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">プラン</th>
+        <td style="padding: 16px;">肩・ボディプラン 300単位</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="margin-top: 40px; max-width: 960px; margin-left: auto; margin-right: auto;">
+    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px;">製剤選定理由</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333;">
+      肩の盛り上がりの原因となっている僧帽筋の張りに対しては、ボツラックスが適しています。筋肉のボリュームを抑え、なだらかな肩のラインを実現するために、適切な単位数での注入を行いました。脂肪が少なく筋肉の張りが主な原因であったため、ボトックスが良い適応と判断しました。
+    </p>
+  </div>
+</div>
+
+<!-- ⑤ Dr.のこだわりポイント -->
+<div id="section-commitment" class="doctor-commitment" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    Dr.のこだわりポイント
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: start;">
+    <div>
+      <!-- 🆕 検索意図キーワードに即した見出し -->
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">肩の盛り上がりを自然に改善するボトックス注入</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 32px;">
+        肩の盛り上がりは僧帽筋の発達によるものです。当院では、筋肉の張りを的確に評価し、適切な単位数で僧帽筋にボトックスを注入します。過度な注入を避け、自然な肩のラインを保ちながら、盛り上がりを抑えることで、すっきりとした印象を実現します。日常生活への影響を最小限に抑える注入設計が重要です。
+      </p>
+      
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">美的基準</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 32px;">
+        なだらかで女性らしい肩のライン、左右のバランスが整った仕上がりを目指します。盛り上がりを抑えつつ、過度に弱めることなく、自然な美しさを追求します。
+      </p>
+      
+      <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">安全性へのこだわり</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        筋肉の機能を損なわないよう、適切な深さと単位数で注入を行います。注入後の経過観察を行い、必要に応じて調整することで、安全性を最優先にした治療を提供します。
+      </p>
+    </div>
+    
+    <div style="text-align: right;">
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/11/bibi-osaka-doctor-hyaluronic-injection-procedure-01.jpg-scaled.png" alt="ボトックス注入の手元アップ" style="width: 100%; max-width: 280px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</div>
+
+<!-- ⑥ Before/After画像(1カラム・真ん中) -->
+<div id="section-beforeafter" class="before-after" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    Before / After
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 800px; margin: 0 auto;">
+    <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/カルテ番号：2760-1.png" alt="30代 肩ボトックス 症例写真〔背面Before/After〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+  </div>
+  
+  <p style="margin-top: 12px; font-size: 14px; color: #666; text-align: center;">
+    【リスク・副作用】内出血、腫れ、痛み、左右差、感染、アレルギー反応<br>
+    【価格】ボツラックス300単位 ¥29,800(全顔モニター料金) / ¥49,800(通常料金)<br>
+    【回数】1回/2ヶ月後<br>
+    ※効果には個人差があります。
+  </p>
+</div>
+
+<!-- ⑦ 施術後の変化(院長コメント) -->
+<div id="section-doctor-comment" class="doctor-comment-after" style="margin: 80px 0; background: #F5F3F7; padding: 60px 20px; border-radius: 12px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    施術後の変化(院長コメント)
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: center;">
+    <div style="text-align: center;">
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/11/DSC01442-scaled.png" alt="院長 山本のプロフィール写真" style="width: 100%; max-width: 300px; height: auto; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <p style="font-size: 16px; font-weight: 600; margin-top: 16px; color: #726989;">院長 山本 幸一郎</p>
+    </div>
+    
+    <div style="background: #fff; padding: 32px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+      <!-- 🆕 検索意図キーワードを織り込んだ変化の説明 -->
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 20px;">
+        Before/Afterを見ると、僧帽筋の盛り上がりが改善され、肩のラインがすっきりとなだらかになりました。筋肉の張りが軽減され、女性らしい自然な肩のシルエットを実現できています。盛り上がりが気になっていた患者様も、2ヶ月後の経過で「肩のラインが整ってきた」と実感されています。
+      </p>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        僧帽筋の発達による盛り上がりに対して、適切な単位数のボトックス注入を行うことで、左右バランスの取れた美しい肩のラインを取り戻すことができました。過度な注入を避けることで、日常生活に支障のない自然な仕上がりとなっています。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ⑧ 患者様の感想 -->
+<div id="section-voice" class="patient-voice" style="margin: 80px 0;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px;">
+    患者様の感想
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 800px; margin: 0 auto; background: #FFF9F0; padding: 40px; border-radius: 12px; border-left: 4px solid #FFA726;">
+    <blockquote style="margin: 0; padding: 0;">
+      <p style="font-size: 18px; line-height: 1.875; color: #333; font-style: italic; margin-bottom: 20px;">
+        "ずっと気になっていた肩の盛り上がりが、ボトックスで自然に改善されました。
+        <!-- 🆕 検索意図キーワードに関連する改善実感を自然に追記 -->
+        <span style="color:#726989;">肩のラインがすっきりして、服を着た時の印象も変わりました。</span>"
+      </p>
+    </blockquote>
+    <p style="font-size: 16px; line-height: 1.875; color: #666;">
+      長年のお悩みだった肩の盛り上がりが改善され、自信を取り戻されたご様子で、私たちも大変嬉しく思います。今後も継続的なケアで美しい肩のラインを維持していきましょう。
+    </p>
+  </div>
+</div>
+
+<!-- ⑨ 関連ページ - カテゴリー導線 -->
+<div style="background:#F0F4FF;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#726989;margin-top:0;">💉 肩ボトックスについて詳しく</h3>
+  <p>
+    <a href="/service/botox/shoulder/" style="color:#726989;font-weight:bold;text-decoration:underline;">
+      肩ボトックス注射の詳細はこちら
+    </a>
+  </p>
+  <p style="font-size:14px;color:#666;margin-bottom:0;">
+    施術の流れ、料金、リスク、よくある質問など、詳しく解説しています。
+  </p>
+</div>
+
+<!-- ⑨ 関連ページ - その他関連 -->
+<div style="background:#FFF9F0;padding:20px;border-radius:8px;margin:40px 0;">
+  <h3 style="color:#FFA726;margin-top:0;">💉 こちらの施術もおすすめ</h3>
+  <ul style="list-style:none;padding-left:0;">
+    <li style="margin:10px 0;">
+      <a href="https://bibi-clinic.jp/service/botox/masseter/" style="color:#726989;font-weight:bold;">
+        エラボトックス
+      </a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">
+        エラの張りや小顔効果をお求めの方に
+      </span>
+    </li>
+    <li style="margin:10px 0;">
+      <a href="https://bibi-clinic.jp/service/botox/facial/" style="color:#726989;font-weight:bold;">
+        表情筋ボトックス
+      </a>
+      <span style="font-size:13px;color:#666;display:block;margin-top:5px;">
+        額・眉間・目尻のしわ改善に
+      </span>
+    </li>
+  </ul>
+</div>
+
+<footer style="background: #726989; color: #fff; padding: 40px 20px; text-align: center; margin-top: 80px;">
+  <p style="margin: 0; font-size: 14px;">© 2025 BiBi Clinic. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

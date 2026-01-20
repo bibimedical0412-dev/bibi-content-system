@@ -1,0 +1,377 @@
+<!-- ② アイキャッチ画像(2カラム・レスポンシブ) + 結論文 -->
+<div class="hero-images" style="margin: 60px 0; padding: 0 16px;">
+  <div class="grid-2col" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/1-9.png" alt="20代 眉アートメイク4D 症例写真〔右45度Before/After〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/1-2-1.png" alt="20代 眉アートメイク4D 症例写真〔正面Before/After〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+  </div>
+  
+  <!-- 結論文 -->
+  <div style="background: #FFF9F0; padding: 20px; border-radius: 8px; margin: 20px auto; max-width: 1200px; border-left: 4px solid #FFA726;">
+    <p style="font-size: 18px; font-weight: 600; color: #333; margin: 0; line-height: 1.8;">
+      ▶ ※眉の高さ・太さ・左右のバランスにご注目ください
+    </p>
+  </div>
+  
+  <p style="margin-top: 12px; font-size: 14px; color: #666; text-align: center; padding: 0 16px;">
+    【施術内容】アートメイク<br>
+    【リスク・副作用】赤み・腫れ・痛み・かゆみ・炎症・感染症のリスク・色素沈着など<br>
+    【価格】部分モニター価格: ¥33,000 / 通常価格: ¥41,000<br>
+    【回数】1回目（1回目から1-2ヶ月後に2回目推奨）<br>
+    【施術時間】約120分
+  </p>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+<!-- ③ 患者様プロフィールとお悩み -->
+<div id="section-profile" class="patient-profile-concern section-padding" style="margin: 60px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    患者様プロフィールとお悩み
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: 1fr 2fr; gap: 30px; max-width: 1200px; margin: 0 auto; align-items: start;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/1-9.png" alt="患者様プロフィール｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    
+    <div>
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #81749A;">プロフィール</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 24px;">
+        20代女性。
+      </p>
+      
+      <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #81749A;">主なお悩み</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        「眉の左右差が気になる」
+      </p>
+      
+      <p style="font-size: 16px; line-height: 1.875; color: #666; margin-top: 16px;">
+        鏡を見るたびに眉の左右差が気になり、メイクで調整するのが毎朝大変でした。左右のバランスを整えて、素顔でも自信が持てる自然な眉を目指したいとご来院されました。
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+    h2 { font-size: 22px !important; }
+    h3 { font-size: 18px !important; }
+  }
+</style>
+
+<!-- ④ 施術内容・使用色素 -->
+<div id="section-treatment" class="treatment-detail section-padding" style="margin: 60px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    施術内容・使用色素
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; max-width: 800px; margin: 0 auto; border-collapse: collapse; background: #F5F3F7; border-radius: 8px; overflow: hidden; min-width: 300px;">
+      <tr style="background: #726989; color: #fff;">
+        <th style="padding: 16px; text-align: left; font-weight: 600;">項目</th>
+        <th style="padding: 16px; text-align: left; font-weight: 600;">内容</th>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">施術部位</th>
+        <td style="padding: 16px;">眉毛</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">技法</th>
+        <td style="padding: 16px;">4D（毛並み+パウダー）</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">使用色素</th>
+        <td style="padding: 16px;">安全性の高い医療用色素（ブラウン系）</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">施術回数</th>
+        <td style="padding: 16px;">1回目 / 2回予定</td>
+      </tr>
+      <tr>
+        <th style="padding: 16px; background: #E8E4EC; font-weight: 600;">施術時間</th>
+        <td style="padding: 16px;">約120分</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div style="margin-top: 40px; max-width: 960px; margin-left: auto; margin-right: auto;">
+    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #81749A;">技法について</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333;">
+      今回使用した4D技法は、1本1本の毛並みを手彫りで描き、さらにパウダー技法で陰影を加えることで、眉の左右差を細かく調整できる手法です。左右のバランスを丁寧に整えながら、自然で立体的な仕上がりを実現します。素顔でも違和感のない、ナチュラルな美眉を目指しました。
+    </p>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    table th, table td {
+      font-size: 14px !important;
+      padding: 12px !important;
+    }
+  }
+</style>
+
+<!-- ④-2 デザイン・色選定 -->
+<div id="section-design" class="design-selection section-padding" style="margin: 80px 0; background: #F8F9FA; padding: 60px 20px; border-radius: 12px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    デザイン・色選定について
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 960px; margin: 0 auto;">
+    <h3 style="font-size: 24px; font-weight: 600; margin-bottom: 16px; color: #726989;">デザイン選定</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333;">
+      左右のバランスを整えるために、黄金比をベースに骨格分析を実施しました。眉の左右差の原因を特定したところ、左眉は若干角度が低く、右眉は長さが不足していることが判明。左眉は目尻のアーチを意識して角度を上げ、右眉は眉尾を延長することで、左右対称の美しい眉を目指しました。お顔全体のバランスを考慮し、調和の取れた自然な仕上がりを追求しています。
+    </p>
+    
+    <h3 style="font-size: 24px; font-weight: 600; margin: 40px 0 16px; color: #726989;">色選定</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333;">
+      患者様の地毛の色、肌のトーン、髪色を総合的に分析し、ナチュラルなブラウン系の色素を選定しました。時間が経っても赤みが出にくく、自然な発色が持続する医療用色素を使用しています。素顔でもメイク時でも違和感のない、万能な色合いに仕上げました。
+    </p>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 40px 16px !important;
+    }
+  }
+</style>
+
+<!-- ⑤ アーティストのこだわり -->
+<div id="section-commitment" class="artist-commitment section-padding" style="margin: 80px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    アーティストのこだわり
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div style="background: #FFF9F0; padding: 30px; border-radius: 12px; border-left: 4px solid #FFA726; margin-bottom: 30px;">
+      <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 16px; color: #FFA726;">🎨 黄金比デザイン</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        眉の左右差を丁寧に分析し、骨格に合わせた黄金比デザインを設計しました。左右のバランスを整えることで、顔全体の印象がより美しく調和します。1mm単位の微調整にこだわり、患者様の骨格美を最大限に引き出すデザインを追求しています。
+      </p>
+    </div>
+    
+    <div style="background: #F0F8FF; padding: 30px; border-radius: 12px; border-left: 4px solid #4A90E2; margin-bottom: 30px;">
+      <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 16px; color: #4A90E2;">🎨 色選定技術</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        患者様の肌トーン、髪色、ご希望のメイクスタイルを総合的に分析し、最適な色素をカスタムブレンド。時間が経っても赤みや青みが出にくい、ナチュラルな発色が持続する色選定にこだわっています。素顔でもメイク時でも美しく調和する色合いを目指しました。
+      </p>
+    </div>
+    
+    <div style="background: #F5F3F7; padding: 30px; border-radius: 12px; border-left: 4px solid #726989;">
+      <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 16px; color: #726989;">✅ 安全性へのこだわり</h3>
+      <p style="font-size: 16px; line-height: 1.875; color: #333;">
+        アートメイクは皮膚の浅い層に色素を定着させる医療行為です。BiBiクリニックでは医師の監修のもと、医療管理下で施術を行い、衛生管理と感染対策を徹底しています。施術前には体調や既往歴、皮膚状態を確認し、リスクを評価したうえで施術計画を立案。器具は使い捨てを基本とし、施術後も経過をフォローする体制を整えています。
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 40px 16px !important;
+    }
+  }
+</style>
+
+<!-- ⑥ Before/After画像 + 見方誘導 -->
+<div id="section-beforeafter" class="before-after section-padding" style="margin: 80px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    Before/After
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <!-- 見方誘導 -->
+  <div style="background: #FFF9F0; padding: 20px; border-radius: 8px; margin-bottom: 30px; max-width: 1200px; margin-left: auto; margin-right: auto; border-left: 4px solid #FFA726;">
+    <p style="font-size: 16px; font-weight: 600; color: #333; margin: 0; line-height: 1.8;">
+      👀 ※眉の左右のバランス、形の対称性にご注目ください
+    </p>
+  </div>
+  
+  <div class="grid-2col" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto;">
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/1-9.png" alt="眉アートメイク4D〔右45度Before/After〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+    <div>
+      <img src="https://bibi-clinic.jp/wp-content/uploads/2025/12/1-2-1.png" alt="眉アートメイク4D〔正面Before/After〕｜大阪 心斎橋BiBiクリニック" loading="lazy" style="width: 100%; height: auto; border-radius: 8px;">
+    </div>
+  </div>
+  
+  <p style="margin-top: 12px; font-size: 14px; color: #666; text-align: center; padding: 0 16px;">
+    ※施術効果には個人差があります。
+  </p>
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
+
+<!-- ⑦ 施術後の変化(アーティストコメント) + 冒頭結論文 -->
+<div id="section-artist-comment" class="artist-comment section-padding" style="margin: 80px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    施術後の変化（アーティストコメント）
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 960px; margin: 0 auto; background: #F8F9FA; padding: 40px; border-radius: 12px;">
+    <!-- 冒頭結論文 -->
+    <p style="font-size: 18px; line-height: 1.875; color: #333; font-weight: 600; margin-bottom: 20px; padding: 15px; background: #FFF9F0; border-radius: 8px; border-left: 4px solid #FFA726;">
+      眉の左右差を自然に整え、素顔でも違和感のない眉に仕上がりました。
+    </p>
+    
+    <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 20px;">
+      Before写真では気になっていた眉の左右差が、Afterでは自然に整い、バランスの取れた美しい眉になっています。左右差を丁寧に調整したことで、調和の取れた印象に変化しました。4D技法の毛並みとパウダーの組み合わせにより、立体感のある自然な仕上がりを実現しています。
+    </p>
+    
+    <p style="font-size: 16px; line-height: 1.875; color: #333; font-style: italic; border-left: 4px solid #726989; padding-left: 16px;">
+      「鏡を見るたびに気になっていた左右差が解消されて、本当に嬉しいです。」
+    </p>
+  </div>
+</div>
+
+<!-- ⑧ 患者様の感想 -->
+<div id="section-voice" class="patient-voice section-padding" style="margin: 80px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    患者様の感想
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 960px; margin: 0 auto; background: #FFF9F0; padding: 40px; border-radius: 12px; border: 2px solid #FFA726;">
+    <p style="font-size: 18px; line-height: 2; color: #333; font-weight: 500;">
+      「以前から眉の左右差が気になっていて、毎朝メイクで調整するのが大変でした。アートメイクをして、左右のバランスが整い、メイク時間が大幅に短縮されて本当に助かっています。素顔でも自信が持てるようになり、鏡を見るのが楽しくなりました。左右差の調整を丁寧にしていただき、自然な仕上がりにとても満足しています。痛みも思ったより少なく、安心して施術を受けることができました。ありがとうございました!」
+    </p>
+    
+    <p style="text-align: right; margin-top: 20px; font-size: 14px; color: #666;">
+      - 20代女性
+    </p>
+  </div>
+</div>
+
+<!-- ⑨ この症例が向いている人 -->
+<div id="section-suitable" class="suitable-for section-padding" style="margin: 80px 0; padding: 0 16px;">
+  <h2 style="font-size: 28px; font-weight: 600; text-align: center; margin-bottom: 40px; position: relative; padding-bottom: 16px; color: #545454;">
+    この症例が向いている方
+    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: #726989;"></span>
+  </h2>
+  
+  <div style="max-width: 960px; margin: 0 auto; background: #F0F8FF; padding: 40px; border-radius: 12px; border: 2px solid #4A90E2;">
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="font-size: 18px; line-height: 2.2; color: #333; padding-left: 30px; position: relative;">
+        <span style="position: absolute; left: 0; color: #4A90E2; font-weight: 700;">✔</span>
+        眉の左右差が気になる方
+      </li>
+      <li style="font-size: 18px; line-height: 2.2; color: #333; padding-left: 30px; position: relative;">
+        <span style="position: absolute; left: 0; color: #4A90E2; font-weight: 700;">✔</span>
+        毎朝の眉メイクを楽にしたい方
+      </li>
+      <li style="font-size: 18px; line-height: 2.2; color: #333; padding-left: 30px; position: relative;">
+        <span style="position: absolute; left: 0; color: #4A90E2; font-weight: 700;">✔</span>
+        濃すぎない自然な眉をご希望の方
+      </li>
+      <li style="font-size: 18px; line-height: 2.2; color: #333; padding-left: 30px; position: relative;">
+        <span style="position: absolute; left: 0; color: #4A90E2; font-weight: 700;">✔</span>
+        素顔でも違和感のない仕上がりを求める方
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ⑩ おすすめリンク -->
+<div id="section-recommended-links" class="recommended-links section-padding" style="margin: 80px 0; padding: 0 16px;">
+  
+  <!-- 部位別詳細ページへのリンク -->
+  <div style="background: #F0F8FF; padding: 40px; border-radius: 12px; border: 2px solid #4A90E2; margin-bottom: 30px; max-width: 960px; margin-left: auto; margin-right: auto;">
+    <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 16px; color: #4A90E2;">🎨 眉アートメイクの詳細はこちら</h3>
+    <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 16px;">
+      <a href="/service/artmake/eyebrow/" style="color: #4A90E2; text-decoration: underline; font-weight: 600;">/service/artmake/eyebrow/</a>
+    </p>
+    <p style="font-size: 16px; line-height: 1.875; color: #666; margin: 0;">
+      施術の流れ、回数の目安、料金、リスク、<br>
+      よくあるご質問まで詳しく解説しています。
+    </p>
+  </div>
+  
+  <!-- 関連施術へのリンク -->
+  <div style="max-width: 960px; margin: 0 auto;">
+    <h3 style="font-size: 22px; font-weight: 600; margin-bottom: 20px; color: #726989; text-align: center;">🌿 こちらの施術もおすすめ</h3>
+    
+    <div class="grid-2col" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+      <!-- リンク1: リップアートメイク -->
+      <div style="background: #FFF9F0; padding: 25px; border-radius: 8px; border: 2px solid #FFA726;">
+        <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #FFA726;">リップアートメイク</h4>
+        <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 12px;">
+          <a href="/service/artmake/lip/" style="color: #726989; text-decoration: underline; font-weight: 600;">/service/artmake/lip/</a>
+        </p>
+        <p style="font-size: 14px; line-height: 1.7; color: #666; margin: 0;">
+          血色感を整え、すっぴんでも明るい印象にしたい方に
+        </p>
+      </div>
+      
+      <!-- リンク2: アートメイク総合ページ -->
+      <div style="background: #F5F3F7; padding: 25px; border-radius: 8px; border: 2px solid #726989;">
+        <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #726989;">アートメイク総合ページ</h4>
+        <p style="font-size: 16px; line-height: 1.875; color: #333; margin-bottom: 12px;">
+          <a href="/service/artmake/" style="color: #726989; text-decoration: underline; font-weight: 600;">/service/artmake/</a>
+        </p>
+        <p style="font-size: 14px; line-height: 1.7; color: #666; margin: 0;">
+          部位ごとの違いやデザインの考え方を知りたい方に
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<style>
+  /* 全体のベーススタイル */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* レスポンシブ画像 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* 2カラムレイアウトのレスポンシブ */
+  @media (max-width: 768px) {
+    .grid-2col {
+      grid-template-columns: 1fr !important;
+    }
+    
+    /* フォントサイズ調整 */
+    h1 { font-size: 24px !important; }
+    h2 { font-size: 22px !important; }
+    h3 { font-size: 18px !important; }
+    p, li { font-size: 16px !important; }
+    
+    /* パディング調整 */
+    .section-padding {
+      padding: 40px 16px !important;
+    }
+  }
+</style>
