@@ -1,0 +1,88 @@
+# CASE INPUT
+
+case_id: "3410"
+age_decade: "50代"
+sex: "女性"
+
+seo_title: "50代女性 ヒアルロン酸リフト 症例｜大阪 心斎橋BiBiクリニック"
+keywords: ["ヒアルロン酸リフト","50代","たるみ改善","大阪 心斎橋"]
+meta_description: "50代のたるみ・ほうれい線・フェイスラインの崩れに対し、ヒアルロン酸を用いた構造的リフトで自然に若々しい印象へ。Before/Afterと院長コメントで解説します。"
+
+category_url: "/service/hyaluronic-acid/lift/"
+final_slug: "/case/3410/"  # ※あなたの運用ルールがあればそれに合わせて変更
+
+images:
+  hero:
+    - url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_1.png"
+      alt: "50代女性 ヒアルロン酸リフト 症例写真〔正面B/A〕｜大阪 心斎橋BiBiクリニック"
+    - url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_2.png"
+      alt: "50代女性 ヒアルロン酸リフト 症例写真〔左斜めB/A〕｜大阪 心斎橋BiBiクリニック"
+
+  profile:
+    url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_3.png"
+    alt: "50代女性 ヒアルロン酸リフト 症例写真〔正面1回目B/A〕｜大阪 心斎橋BiBiクリニック"
+
+  before_after:
+    - url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_1.png"
+      alt: "50代女性 ヒアルロン酸リフト 症例写真〔正面B/A〕｜大阪 心斎橋BiBiクリニック"
+      angle: "正面"
+    - url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_4.png"
+      alt: "50代女性 ヒアルロン酸リフト 症例写真〔右斜めB/A〕｜大阪 心斎橋BiBiクリニック"
+      angle: "右斜め"
+    - url: "https://bibi-clinic.jp/wp-content/uploads/2025/12/3410_5.png"
+      alt: "50代女性 ヒアルロン酸リフト 症例写真〔左斜めB/A〕｜大阪 心斎橋BiBiクリニック"
+      angle: "左斜め"
+
+  doctor:
+    url: "https://bibi-clinic.jp/wp-content/uploads/2025/11/DSC01442-scaled.png"
+    alt: "院長 山本のプロフィール写真"
+
+  procedure:
+    url: "https://bibi-clinic.jp/wp-content/uploads/2025/11/bibi-osaka-doctor-hyaluronic-injection-procedure-01.jpg-scaled.png"
+    alt: "ヒアルロン酸注入の手元アップ"
+
+main_problems:
+  - "目の下のクマ"
+  - "ほうれい線"
+  - "フェイスラインのたるみ"
+  - "顎/顎先の形"
+
+treatment:
+  name: "ヒアルロン酸注入術"
+  sessions: 2
+  time_minutes: "約10〜30分"
+  products:
+    - { name: "ボリューマ", count: 4, unit: "本" }
+    - { name: "ボラックス", count: 3, unit: "本" }
+    - { name: "ボルベラ", count: 2, unit: "本" }
+    - { name: "ボツラックス", count: 50, unit: "単位" }
+
+  injection_areas_session1: "頬外側(CK1,4)、頬骨下(Jw1)、こめかみ(T1)、頬中心(CK3)、涙袋・目の下(ティアトラフ)、ボトックス(額・眉間・目尻・顎・口角)"
+  injection_areas_session2: "顎先(C1,2)、唇"
+
+price:
+  plan: "部分モニター"
+  monitor_yen: 498000
+  regular_yen: 553200
+
+risks:
+  - "内出血"
+  - "腫れ"
+  - "痛み"
+  - "左右差"
+  - "感染"
+  - "アレルギー反応"
+  - "塞栓"
+
+patient_voice: >
+  全然違いますね。顔が引き締まっていて嬉しいです。ありがとうございました。
+  たるみが改善されて、鏡を見るのが楽しみになりました。
+
+doctor_comment_seed: >
+  50代特有のたるみに対し、頬骨周辺・こめかみなどの"支える構造"から立て直す設計で、
+  光が当たるハイライト位置を回復。2回セッションで自然な立体感を優先して仕上げる。
+
+related_links:
+  - { label: "ヒアルロン酸リフト総合ページ", url: "/service/hyaluronic-acid/lift/" }
+  - { label: "顎・フェイスラインのヒアルロン酸", url: "/service/hyaluronic-acid/lowerface-chin/" }
+  - { label: "ボトックス注射", url: "/service/botox/" }
