@@ -54,3 +54,8 @@ related_links:
   - { label: "ヒアルロン酸リフト総合ページ", url: "/service/hyaluronic-acid/lift/" }
   - { label: "顎・フェイスラインのヒアルロン酸", url: "/service/hyaluronic-acid/lowerface-chin/" }
   - { label: "ボトックス注射", url: "/service/botox/" }
+
+publish_targets:
+  - wordpress
+  - note
+  - ameblo 
