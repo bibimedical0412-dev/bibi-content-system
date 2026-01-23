@@ -206,7 +206,7 @@ def openai_generate_html(structured_input: str) -> str:
     headers = {
         "Authorization": f"Bearer {OPENAI_API_KEY}",
         "Content-Type": "application/json"
-    }
+    }f
 
     payload = {
         "model": OPENAI_MODEL,
