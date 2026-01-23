@@ -1,0 +1,238 @@
+import os, json, base64, uuid, datetime
+import requests
+from dotenv import load_dotenv
+
+from googleapiclient.discovery import build
+import google.auth
+
+load_dotenv(".env")
+
+# ====== Required ENV ======
+SHEET_ID  = os.getenv("SHEET_ID")
+SHEET_TAB = os.getenv("SHEET_TAB")
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_MODEL   = os.getenv("OPENAI_MODEL", "gpt-4o-mini")  # もし違うモデルなら export OPENAI_MODEL=... で上書き
+
+WP_BASE_URL = os.getenv("WP_BASE_URL", "").rstrip("/")
+WP_USER     = os.getenv("WP_USER")
+WP_APP_PASS = os.getenv("WP_APP_PASS")
+
+if not SHEET_ID or not SHEET_TAB:
+    raise RuntimeError("SHEET_ID / SHEET_TAB が未設定です。先に export してください。")
+
+def now_jst_iso():
+    # JSTで記録（Sheetsに見やすく）
+    jst = datetime.timezone(datetime.timedelta(hours=9))
+    return datetime.datetime.now(jst).strftime("%Y-%m-%d %H:%M:%S")
+
+def auth_header_basic(user: str, app_pass: str) -> dict:
+    token = base64.b64encode(f"{user}:{app_pass}".encode("utf-8")).decode("utf-8")
+    return {"Authorization": f"Basic {token}"}
+
+def sheets_service():
+    creds, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/spreadsheets"])
+    return build("sheets", "v4", credentials=creds)
+
+def get_values(svc, range_a1: str):
+    res = svc.spreadsheets().values().get(
+        spreadsheetId=SHEET_ID,
+        range=range_a1
+    ).execute()
+    return res.get("values", [])
+
+def update_values(svc, range_a1: str, values):
+    svc.spreadsheets().values().update(
+        spreadsheetId=SHEET_ID,
+        range=range_a1,
+        valueInputOption="RAW",
+        body={"values": values}
+    ).execute()
+
+def find_header_map(headers):
+    # ヘッダー名で列を自動認識（順番は問わない）
+    # あなたのシートに合わせてゆるく対応
+    aliases = {
+        "status": ["Status", "status", "ステータス"],
+        "raw_input": ["raw_input", "raw input", "該当のカルテ情報", "該当カルテ情報", "raw"],
+        "title": ["症例タイトル案", "症例タイトル", "wp_title", "WPタイトル", "タイトル"],
+        "wp_draft_url": ["wp_draft_url", "WP下書きURL", "WP下書きURL ", "wp draft url"],
+        "wp_post_id": ["wp_post_id", "wp_postid", "post_id", "WP_post_id"],
+        "flags": ["flags", "要確認点", "要確認", "flag"],
+        "error_message": ["error_message", "error", "エラー", "エラーメッセージ"],
+        "generated_at": ["generated_at", "生成日時", "generated at"],
+        "started_at": ["started_at", "開始", "started at"],
+        "finished_at": ["finished_at", "終了", "finished at"],
+        "row_lock": ["row_lock", "ロック", "lock"],
+        "final_slug": ["final_slug", "完成スラッグ", "完成slug", "slug"],
+    }
+
+    idx = {}
+    for key, keys in aliases.items():
+        for i, h in enumerate(headers):
+            if h in keys:
+                idx[key] = i
+                break
+    return idx
+
+def openai_generate_html(raw_text: str) -> str:
+    # いまは「まず1件完走」が最優先：raw_input をそのまま投げる（推測禁止）
+    prompt = f"""あなたは美容クリニックの医師です。
+以下の入力を元に、ヒアルロン酸症例ページ用のHTML本文を作ってください。
+
+【禁止】
+- 推測でcc、本数、金額を出さない
+- 未記載の情報を作らない
+
+【入力】
+{raw_text}
+
+【出力】
+HTMLのみ（<h2>〜など本文だけ）。"""
+
+    headers = {
+        "Authorization": f"Bearer {OPENAI_API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    # Responses API（新しめ）優先。ダメならChatCompletionsに切替してもOK（必要なら言って）
+    payload = {
+        "model": OPENAI_MODEL,
+        "input": prompt,
+        "max_output_tokens": 1800,
+    }
+
+    r = requests.post("https://api.openai.com/v1/responses", headers=headers, json=payload, timeout=120)
+    if r.status_code >= 300:
+        raise RuntimeError(f"OpenAI error {r.status_code}: {r.text}")
+
+    data = r.json()
+
+    # responses の取り方（出力形式差分を吸収）
+    text = None
+    if "output_text" in data and data["output_text"]:
+        text = data["output_text"]
+    else:
+        # 念のためfallback
+        try:
+            chunks = []
+            for o in data.get("output", []):
+                for c in o.get("content", []):
+                    if c.get("type") in ("output_text", "text"):
+                        chunks.append(c.get("text", ""))
+            text = "\n".join(chunks).strip()
+        except Exception:
+            text = None
+
+    if not text:
+        raise RuntimeError("No HTML generated")
+    return text
+
+def wp_create_draft(title: str, html: str):
+    url = f"{WP_BASE_URL}/wp-json/wp/v2/posts"
+    headers = {"Content-Type": "application/json"}
+    headers.update(auth_header_basic(WP_USER, WP_APP_PASS))
+
+    body = {"title": title, "content": html, "status": "draft"}
+    r = requests.post(url, headers=headers, json=body, timeout=120)
+    if r.status_code >= 300:
+        raise RuntimeError(f"WP error {r.status_code}: {r.text}")
+
+    post = r.json()
+    return post.get("id"), post.get("link")
+
+def main():
+    svc = sheets_service()
+
+    # 1) ヘッダー行 + データ行を取る（まずA:AZくらい広めに）
+    values = get_values(svc, f"{SHEET_TAB}!A1:AZ2000")
+    if not values or len(values) < 2:
+        raise RuntimeError("シートにデータがない or 範囲が取れていません。SHEET_TAB（タブ名）を確認してください。")
+
+    headers = values[1]  # ← 2行目をヘッダーとして使う
+    idx = find_header_map(headers)
+
+    # 必須列チェック
+    for k in ["status", "raw_input", "title"]:
+        if k not in idx:
+            raise RuntimeError(f"必須列が見つかりません: {k}（ヘッダー名を確認）")
+
+   # 2) Status=New の最初の1行を探す
+target_row = None
+for r_i in range(2, len(values)):  # 2 = 3行目（実データ開始）
+    row = values[r_i] + [""] * (len(headers) - len(values[r_i]))
+    status = (row[idx["status"]] or "").strip().lower()
+    if status == "new":
+        target_row = (r_i, row)
+        break
+
+if not target_row:
+    print("No target row: Status=New が見つかりませんでした。")
+    return
+
+# ===== ②title を取得（ここが正しい場所） =====
+r_i, row = target_row
+title = (row[idx["title"]] or "").strip()
+
+if not title:
+    raise RuntimeError("title が空です（シートの title 列を確認）")
+        
+
+
+    r_i, row = target_row
+    rownum = r_i + 1  # A1の行番号
+
+    # 3) Runningにしてロック
+    lock = str(uuid.uuid4())[:8]
+    started = now_jst_iso()
+    def set_cell(col_key, value):
+        if col_key in idx:
+            col = idx[col_key]
+            row[col] = value
+
+    set_cell("row_lock", lock)
+    set_cell("started_at", started)
+    set_cell("status", "Running")
+    update_values(svc, f"{SHEET_TAB}!A{rownum}:AZ{rownum}", [row])
+
+    try:
+        raw_text = (row[idx["raw_input"]] or "").strip()
+        if not raw_text:
+            raise RuntimeError("raw_input が空です")
+
+        title = "【症例】ヒアルロン酸（自動生成）"
+        if "title" in idx and (row[idx["title"]] or "").strip():
+            title = (row[idx["title"]] or "").strip()
+
+        html = openai_generate_html(raw_text)
+        post_id, link = wp_create_draft(title, html)
+
+        finished = now_jst_iso()
+        set_cell("wp_post_id", str(post_id))
+        set_cell("wp_draft_url", link or "")
+        set_cell("generated_at", finished)
+        set_cell("finished_at", finished)
+        set_cell("error_message", "")
+        # flagsは空に（必要なら後で追加）
+        if "flags" in idx and not (row[idx["flags"]] or "").strip():
+            set_cell("flags", "")
+
+        set_cell("status", "Done")
+        update_values(svc, f"{SHEET_TAB}!A{rownum}:AZ{rownum}", [row])
+
+        print("DONE")
+        print("row:", rownum)
+        print("post_id:", post_id)
+        print("link:", link)
+
+    except Exception as e:
+        finished = now_jst_iso()
+        set_cell("finished_at", finished)
+        set_cell("generated_at", finished)
+        set_cell("error_message", str(e)[:500])
+        set_cell("status", "Error")
+        update_values(svc, f"{SHEET_TAB}!A{rownum}:AZ{rownum}", [row])
+        raise
+
+if __name__ == "__main__":
+    main()
