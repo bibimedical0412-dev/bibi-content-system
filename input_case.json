@@ -1,0 +1,9 @@
+{
+  "age": "30代",
+  "sex": "女性",
+  "main_treatment": "ヒアルロン酸",
+  "area": ["中顔面"],
+  "product": ["ボリューマ"],
+  "price_flag": "unknown",
+  "flags": ["price_uncertain"]
+}

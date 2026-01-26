@@ -1,0 +1,18 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+
+# venv
+.venv/
+venv/
+
+# local env
+.env
+
+# temp / logs
+*.log
+*.txt
+
+# OS
+.DS_Store
